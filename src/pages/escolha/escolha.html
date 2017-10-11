@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Tela de escolha
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <ion-item-divider color="light">
+                    <ion-icon name="apps" item-left ></ion-icon>
+                    SALA
+                </ion-item-divider>
+                <ion-item>{{ sala.nome }}</ion-item>
+                <ion-item>R$ {{ sala.preco }} </ion-item>
+            </ion-item-group>
+            <ion-item-group>
+                <ion-item-divider color="light">
+                    <ion-icon name="options" item-left ></ion-icon>
+                    OPCIONAIS
+                </ion-item-divider>
+                <ion-item *ngFor="let opcional of opcionais" >
+                    <ion-label>
+                        <h2>{{ opcional.nome }}</h2>
+                        <h3>R$ {{opcional.preco}}</h3>
+                    </ion-label>
+                    <ion-toggle #toggle color="secondary" (ionChange)="atualizaTotal(toggle.checked, opcional)"></ion-toggle>
+                </ion-item>
+                <ion-item-divider>TOTAL: R$ {{ precoTotal }} </ion-item-divider>
+            </ion-item-group>
+            <button ion-button block (click)="avancaAgendamento()">Avançar</button>
+            
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+    
+</ion-footer>
