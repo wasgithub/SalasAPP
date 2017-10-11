@@ -1,3 +1,3 @@
 export class Sala {
-    constructor(public nome: string, public preco: number){}
+    constructor(public nome: string, public preco: number, public imgDir: string){}
 }

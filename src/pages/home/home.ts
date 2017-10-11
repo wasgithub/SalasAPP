@@ -10,17 +10,21 @@ import { Sala } from '../../domain/sala/sala'
 })
 export class HomePage implements OnInit{
   public salas: Sala[];
-  constructor(public navCtrl: NavController) {}
+  public salaImg: Array<String>;
+
+  constructor(public navCtrl: NavController) {
+    
+  }
 
   ngOnInit(): void {
     this.salas = [
-      {nome: 'Sala 01', preco:50},
-      {nome: 'Sala 02', preco:70},
-      {nome: 'Sala 03', preco:40},
-      {nome: 'Sala 04', preco:30},
-      {nome: 'Sala 05', preco:65},
-      {nome: 'Sala 06', preco:75},
-      {nome: 'Sala 07', preco:85},
+      {nome: 'Sala 01', preco:50, imgDir: 'assets/img/sala-reuniao.png'},
+      {nome: 'Sala 02', preco:70, imgDir: 'assets/img/sala-reuniao.png'},
+      {nome: 'Sala 03', preco:40, imgDir: 'assets/img/sala-reuniao.png'},
+      {nome: 'Sala 04', preco:30, imgDir: 'assets/img/sala-reuniao.png'},
+      {nome: 'Sala 05', preco:65, imgDir: 'assets/icon/sala-reuniao.png'},
+      {nome: 'Sala 06', preco:75, imgDir: 'assets/img/sala-reuniao.png'},
+      {nome: 'Sala 07', preco:85, imgDir: 'assets/img/sala-reuniao.png'},
     ]
   }
 
