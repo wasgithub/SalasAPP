@@ -9,22 +9,22 @@
 
 <ion-content padding>
 
-  <form action="">
+  <form (ngSubmit)="agenda()">
     <ion-item>
       <ion-label stacked>Nome</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="nome" name="nome"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Endereço</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="endereco" name="endereco"></ion-input>
       </ion-item>
     <ion-item>
       <ion-label stacked>E-mail</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="email" name="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Data</ion-label>
-      <ion-input></ion-input>
+      <ion-datetime [(ngModel)]="data" name="data" displayFormat="DD/MM/YY"></ion-datetime>
     </ion-item>    
     <button ion-button block type="submit">Agendar</button>
   </form>
