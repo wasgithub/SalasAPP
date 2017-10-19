@@ -17,6 +17,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { AgendamentoService } from '../domain/agendamento/agendamento-service';
 import { AgendamentoDao } from './../domain/agendamento/agendamento-dao';
+import { AgendamentosPage } from '../pages/agendamentos/agendamentos';
 
 function provideStorage() {
   
@@ -31,7 +32,8 @@ function provideStorage() {
     MyApp,
     HomePage,
     EscolhaPage,
-    CadastroPage
+    CadastroPage,
+    AgendamentosPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ function provideStorage() {
     MyApp,
     HomePage,
     EscolhaPage,
-    CadastroPage
+    CadastroPage,
+    AgendamentosPage
   ],
   providers: [
     StatusBar,
