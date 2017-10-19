@@ -14,5 +14,9 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item *ngFor="let agendamento of agendamentos">
+        {{ agendamento.sala.nome }}
+    </ion-item>
+  </ion-list>
 </ion-content>

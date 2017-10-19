@@ -1,3 +1,4 @@
+import { Sala } from './../sala/sala';
 import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
 import { Agendamento } from './agendamento';
@@ -25,6 +26,24 @@ export class AgendamentoDao {
             .then(dado => {
                 return dado ? true : false;
             });
+    }
+
+    listAll(){
+        let agendamentos = [];
+        return this._storage.forEach(dado => {
+            let sala  = new Sala(dado.nome, dado.preco, dado.imgDir);
+            let agendamento = new Agendamento(
+                sala,
+                dado.valor,
+                dado.nome,
+                dado.endereco,
+                dado.email,
+                dado.data,
+                dado.confirmado);
+            
+                agendamentos.push(agendamento)
+        })
+        .then(() => agendamentos);
     }
    
     
