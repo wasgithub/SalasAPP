@@ -2,8 +2,10 @@ import { HomePage } from './../home/home';
 import { Sala } from './../../domain/sala/sala';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { Agendamento } from './../../domain/agendamento/agendamento';
+
 
 @IonicPage()
 @Component({
@@ -20,7 +22,8 @@ export class CadastroPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private _alertCtrl: AlertController) {
+    private _alertCtrl: AlertController,
+    private _storage: Storage) {
 
     this.sala = navParams.get('sala');
     this.precoTotal = navParams.get('precoTotal');
@@ -35,8 +38,12 @@ export class CadastroPage {
   }
 
   agenda(){
-    //this._http.post('api')
 
+    //this._http.post('api')
+    // set a key/value
+
+    let key = this.agendamento.email + this.agendamento.data.substr(0,10);
+    
     if(!this.agendamento.nome || !this.agendamento.endereco || !this.agendamento.email){
       this._alertCtrl.create({
         title: 'Preenchimento obrigatório',
@@ -46,6 +53,10 @@ export class CadastroPage {
 
       return;
     }
+    
+    this.agendamento.confirmado = true;
+    this._storage.set(key, this.agendamento);
+
     this._alert.setTitle('Agendamento realizado com sucesso..');
     this._alert.present();
     this.navCtrl.setRoot(HomePage);

@@ -1,9 +1,9 @@
-import {  Http } from '@angular/http';
+//import {  Http } from '@angular/http';
 import { Agendamento } from './agendamento';
 
 export class AgendamentoService {
 
-    constructor(private _http: Http){}
+    constructor(){}
 
     agendamento(agendamento: Agendamento){
         /*let api = '';
