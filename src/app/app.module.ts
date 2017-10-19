@@ -15,7 +15,8 @@ import 'rxjs/add/operator/toPromise';
 import { Storage } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage';
 
-import { AgendamentoService } from '../domain/agendamento/agendamento-service'
+import { AgendamentoService } from '../domain/agendamento/agendamento-service';
+import { AgendamentoDao } from './../domain/agendamento/agendamento-dao';
 
 function provideStorage() {
   
@@ -50,6 +51,7 @@ function provideStorage() {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AgendamentoService,
+    AgendamentoDao,
     { provide: Storage, useFactory: provideStorage }
   ]
 })
