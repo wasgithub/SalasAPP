@@ -8,12 +8,15 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-header>
-      Usuario Logado
-    </ion-card-header>
-    <ion-card-content>
+
       <ion-item>
-          {{ usuarioLogado.nome }}
+        <ion-avatar item-left *ngIf="url">
+          <img [src]="url">
+        </ion-avatar>
+        {{ usuarioLogado.nome }}
+        <button ion-button outline item-right (click)="tiraFoto()">
+          <ion-icon name="camera"></ion-icon>
+        </button>
       </ion-item>
       <ion-item>
           <p>{{ usuarioLogado.dataNascimento }}</p>
@@ -24,6 +27,5 @@
       <ion-item>
           <p>{{ usuarioLogado.telefone }}</p>
       </ion-item>
-    </ion-card-content>
   </ion-card>
 </ion-content>

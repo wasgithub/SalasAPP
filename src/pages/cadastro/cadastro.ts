@@ -4,6 +4,7 @@ import { Sala } from './../../domain/sala/sala';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
+import { DatePicker } from '@ionic-native/date-picker';
 //import { Storage } from '@ionic/storage';
 
 import { Agendamento } from './../../domain/agendamento/agendamento';
@@ -27,7 +28,8 @@ export class CadastroPage {
     private _alertCtrl: AlertController,
     //private _storage: Storage,
     private _dao: AgendamentoDao,
-    private _vibration: Vibration) {
+    private _vibration: Vibration,
+    private _datePicker: DatePicker) {
 
     this.sala = navParams.get('sala');
     this.precoTotal = navParams.get('precoTotal');
@@ -75,7 +77,15 @@ export class CadastroPage {
   }
 
   selecionaData(){
-    
+    this._datePicker.show({
+      date: new Date(),
+      mode: 'date'
+    })
+    .then(
+      date => {
+        this.agendamento.data = date.toISOString();
+      }
+    )
   }
 
 }

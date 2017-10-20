@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Vibration } from '@ionic-native/vibration';
-import { Camera } from '@ionic-native/Camera';
+import { Camera } from '@ionic-native/camera';
 import { DatePicker } from '@ionic-native/date-picker';
 import { StatusBar } from '@ionic-native/status-bar';
 import {HttpModule} from '@angular/http'

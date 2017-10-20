@@ -2,6 +2,8 @@ import { Usuario } from './usuario';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
+const KEY = 'avatarUrl';
+
 @Injectable()
 export class UsuarioService{
 
@@ -11,7 +13,7 @@ export class UsuarioService{
 
     public login(email: string, senha:string){
         //logica de enviao com http
-        let api = `https://aluracar.herokuapp.com/login?email=${email}&senha=${senha}`;
+        let api = `https://.herokuapp.com/login?email=${email}&senha=${senha}`;
         return this._http
         .get(api)
         .map(res => res.json().usuario)
@@ -24,6 +26,14 @@ export class UsuarioService{
 
     getUsuarioLogado(){
         return this._usuarioLogado;
+    }
+
+    guardaAvatar(url){
+        localStorage.setItem(KEY, url)
+    }
+
+    obtemAvatar(){
+        return localStorage.getItem(KEY)
     }
 
 }

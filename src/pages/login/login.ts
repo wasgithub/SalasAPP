@@ -11,7 +11,7 @@ import { HomePage } from './../home/home';
 })
 export class LoginPage {
 
-  public email: string = 'joao@alura.com.br';
+  public email: string = 'was@test.com.br';
   public senha: string = 'alura123';
 
   constructor(
