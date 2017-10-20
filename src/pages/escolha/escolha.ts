@@ -40,7 +40,7 @@ export class EscolhaPage {
     avancaAgendamento(){
         this.NavCtrl.push(CadastroPage, {
             sala: this.sala,
-            preceTotal: this._precoTotal})
+            precoTotal: this._precoTotal})
     }
 
 }

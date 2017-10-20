@@ -15,8 +15,15 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let agendamento of agendamentos">
-        {{ agendamento.sala.nome }}
-    </ion-item>
+    <ion-item-sliding *ngFor="let agendamento of agendamentos">
+      <ion-item>
+          {{ agendamento.sala.nome }} - {{ agendamento.valor }}
+      </ion-item>
+      <ion-item-options>
+        <button ion-button >
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding> 
   </ion-list>
 </ion-content>
