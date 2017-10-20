@@ -1,5 +1,6 @@
+import { UsuarioService } from './../../domain/usuario/usuario-service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { HomePage } from './../home/home';
 
@@ -10,13 +11,28 @@ import { HomePage } from './../home/home';
 })
 export class LoginPage {
 
-  public email: string;
-  public senha: string;
+  public email: string = 'joao@alura.com.br';
+  public senha: string = 'alura123';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private _loginService: UsuarioService,
+    private _alertCtrl: AlertController) {}
 
   login(){
-    this.navCtrl.setRoot(HomePage)
+    this._loginService.login(this.email, this.senha)
+    .then(usuario => {
+      console.log(usuario);
+      this.navCtrl.setRoot(HomePage);
+    })
+    .catch(() => {
+      this._alertCtrl.create({
+        title: "Problema no login..",
+        subTitle: "Usuario ou senha incorreto",
+        buttons: [{text: 'Ok'}]
+      }).present();
+    });
   }
 
 }

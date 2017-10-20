@@ -19,6 +19,7 @@ import { AgendamentoService } from '../domain/agendamento/agendamento-service';
 import { AgendamentoDao } from './../domain/agendamento/agendamento-dao';
 import { AgendamentosPage } from '../pages/agendamentos/agendamentos';
 import { LoginPage } from '../pages/login/login';
+import { UsuarioService } from '../domain/usuario/usuario-service';
 
 function provideStorage() {
   
@@ -58,6 +59,7 @@ function provideStorage() {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AgendamentoService,
     AgendamentoDao,
+    UsuarioService,
     { provide: Storage, useFactory: provideStorage }
   ]
 })
