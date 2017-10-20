@@ -3,7 +3,8 @@ import { HomePage } from './../home/home';
 import { Sala } from './../../domain/sala/sala';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+import { Vibration } from '@ionic-native/vibration';
+//import { Storage } from '@ionic/storage';
 
 import { Agendamento } from './../../domain/agendamento/agendamento';
 
@@ -24,8 +25,9 @@ export class CadastroPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private _alertCtrl: AlertController,
-    private _storage: Storage,
-    private _dao: AgendamentoDao) {
+    //private _storage: Storage,
+    private _dao: AgendamentoDao,
+    private _vibration: Vibration) {
 
     this.sala = navParams.get('sala');
     this.precoTotal = navParams.get('precoTotal');
@@ -46,6 +48,7 @@ export class CadastroPage {
 
    
     if(!this.agendamento.nome || !this.agendamento.endereco || !this.agendamento.email){
+      this._vibration.vibrate(500);
       this._alertCtrl.create({
         title: 'Preenchimento obrigatório',
         subTitle: 'Necessario preencher todas as informações',
@@ -64,14 +67,14 @@ export class CadastroPage {
             }
         })
 
-
         this.agendamento.confirmado = true;
         this._dao.save(this.agendamento);
         this._alert.setTitle('Agendamento realizado com sucesso..');
         this._alert.present();
         this.navCtrl.setRoot(HomePage);
+  }
 
-
+  selecionaData(){
     
   }
 

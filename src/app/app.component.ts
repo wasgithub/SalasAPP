@@ -1,3 +1,4 @@
+import { PerfilPage } from './../pages/perfil/perfil';
 import { AgendamentosPage } from './../pages/agendamentos/agendamentos';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
@@ -13,7 +14,8 @@ import { LoginPage } from './../pages/login/login';
 export class MyApp {
   rootPage:any = LoginPage;
   public paginas = [
-    {titulo: 'Agendamentos', componente: AgendamentosPage}
+    { titulo: 'Agendamentos', componente: AgendamentosPage },
+    { titulo: 'Perfil', componente: PerfilPage }
   ];
 
   @ViewChild(Nav) public nav: Nav;

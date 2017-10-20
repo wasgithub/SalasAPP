@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Vibration } from '@ionic-native/vibration';
+import { Camera } from '@ionic-native/Camera';
+import { DatePicker } from '@ionic-native/date-picker';
 import { StatusBar } from '@ionic-native/status-bar';
 import {HttpModule} from '@angular/http'
 
@@ -20,6 +23,7 @@ import { AgendamentoDao } from './../domain/agendamento/agendamento-dao';
 import { AgendamentosPage } from '../pages/agendamentos/agendamentos';
 import { LoginPage } from '../pages/login/login';
 import { UsuarioService } from '../domain/usuario/usuario-service';
+import { PerfilPage } from '../pages/perfil/perfil';
 
 function provideStorage() {
   
@@ -36,7 +40,8 @@ function provideStorage() {
     EscolhaPage,
     CadastroPage,
     AgendamentosPage,
-    LoginPage
+    LoginPage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ function provideStorage() {
     EscolhaPage,
     CadastroPage,
     AgendamentosPage,
-    LoginPage
+    LoginPage,
+    PerfilPage
   ],
   providers: [
     StatusBar,
@@ -60,7 +66,10 @@ function provideStorage() {
     AgendamentoService,
     AgendamentoDao,
     UsuarioService,
-    { provide: Storage, useFactory: provideStorage }
+    { provide: Storage, useFactory: provideStorage },
+    Vibration,
+    Camera,
+    DatePicker
   ]
 })
 export class AppModule {}
