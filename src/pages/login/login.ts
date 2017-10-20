@@ -11,8 +11,8 @@ import { HomePage } from './../home/home';
 })
 export class LoginPage {
 
-  public email: string = 'was@test.com.br';
-  public senha: string = 'alura123';
+  public email: string = 'fiap@aluno.com.br';
+  public senha: string = '123';
 
   constructor(
     public navCtrl: NavController, 
@@ -21,7 +21,7 @@ export class LoginPage {
     private _alertCtrl: AlertController) {}
 
   login(){
-    this._loginService.login(this.email, this.senha)
+    /*this._loginService.login(this.email, this.senha)
     .then(usuario => {
       console.log(usuario);
       this.navCtrl.setRoot(HomePage);
@@ -32,7 +32,19 @@ export class LoginPage {
         subTitle: "Usuario ou senha incorreto",
         buttons: [{text: 'Ok'}]
       }).present();
-    });
+    });*/
+    if (this._loginService.login(this.email, this.senha)){
+      this.navCtrl.setRoot(HomePage);
+    } else {
+      this._alertCtrl.create({
+        title: "Problema no login..",
+        subTitle: "Usuario ou senha incorreto",
+        buttons: [{text: 'Ok'}]
+      }).present();      
+    }
+
+       
+
   }
 
 }

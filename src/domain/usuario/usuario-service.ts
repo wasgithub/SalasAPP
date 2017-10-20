@@ -13,7 +13,7 @@ export class UsuarioService{
 
     public login(email: string, senha:string){
         //logica de enviao com http
-        let api = `https://.herokuapp.com/login?email=${email}&senha=${senha}`;
+        /*let api = `https://.herokuapp.com/login?email=${email}&senha=${senha}`;
         return this._http
         .get(api)
         .map(res => res.json().usuario)
@@ -21,7 +21,14 @@ export class UsuarioService{
         .then(dado => {
             let usuario = new Usuario(dado.nome, dado.dataNascimento, dado.email, dado.telefone);
             this._usuarioLogado = usuario;
-        });
+        });*/
+        let usuario = new Usuario("Fiap Aluno", "30/01/1990", "fiap@aluno.com.br", "1199999999");
+        this._usuarioLogado = usuario;
+        if(email == "fiap@aluno.com.br" && senha == "123"){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     getUsuarioLogado(){
