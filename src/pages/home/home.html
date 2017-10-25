@@ -15,9 +15,8 @@
       <ion-thumbnail item-start>
         <ion-img width="80" height="80" src="{{ sala.imgDir }}"></ion-img>
       </ion-thumbnail>
-      <h2>{{ sala.nome }}</h2>
-      <p>R$ - {{ sala.preco }}</p>
-      <button ion-button clear item-end>View</button>
+      <h2>{{ sala.nome }} - R${{ sala.preco }}</h2>
+      <p>Capacidade: {{ sala.capacidade }} pessoas</p>
     </ion-item>
   </ion-list>
 </ion-content>

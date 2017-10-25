@@ -6,6 +6,7 @@ import { Opcional } from '../../domain/sala/opcional';
 import { CadastroPage } from './../cadastro/cadastro';
 
 @Component({
+    selector: 'page-escolha',
     templateUrl: './escolha.html'
 })
 export class EscolhaPage {

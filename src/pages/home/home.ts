@@ -18,13 +18,11 @@ export class HomePage implements OnInit{
 
   ngOnInit(): void {
     this.salas = [
-      {nome: 'Sala 01', preco:50, imgDir: 'assets/img/sala-reuniao.png'},
-      {nome: 'Sala 02', preco:70, imgDir: 'assets/img/sala-reuniao.png'},
-      {nome: 'Sala 03', preco:40, imgDir: 'assets/img/sala-reuniao.png'},
-      {nome: 'Sala 04', preco:30, imgDir: 'assets/img/sala-reuniao.png'},
-      {nome: 'Sala 05', preco:65, imgDir: 'assets/icon/sala-reuniao.png'},
-      {nome: 'Sala 06', preco:75, imgDir: 'assets/img/sala-reuniao.png'},
-      {nome: 'Sala 07', preco:85, imgDir: 'assets/img/sala-reuniao.png'},
+      {nome: 'Sala 01', preco:50, imgDir: 'assets/img/salas/sala01.jpg', descricao: 'Descriçao sala 01', capacidade: 4 },
+      {nome: 'Sala 02', preco:70, imgDir: 'assets/img/salas/sala02.jpg', descricao: 'Descriçao sala 02', capacidade: 10},
+      {nome: 'Sala 03', preco:40, imgDir: 'assets/img/salas/sala03.jpg', descricao: 'Descriçao sala 03', capacidade: 6},
+      {nome: 'Sala 04', preco:30, imgDir: 'assets/img/salas/sala01.jpg', descricao: 'Descriçao sala 04', capacidade: 4},
+      {nome: 'Sala 05', preco:65, imgDir: 'assets/img/salas/sala02.jpg', descricao: 'Descriçao sala 05', capacidade: 10}
     ]
   }
 
