@@ -16,10 +16,15 @@
 <ion-content padding>
   <ion-list>
     <ion-item-sliding *ngFor="let agendamento of agendamentos">
-      <ion-item>
-          {{ agendamento.sala.nome }} - {{ agendamento.valor }}
-      </ion-item>
-      <ion-item-options>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <ion-img width="80" height="80" src="{{ agendamento.sala.imgDir }}"></ion-img>
+          </ion-thumbnail>
+          <h2>{{ agendamento.sala.nome }} - R${{ agendamento.valor }}</h2>
+          <p>Capacidade: {{ agendamento.sala.capacidade }} pessoas</p>
+          <p class="reservado">Reservado</p>
+        </ion-item>
+        <ion-item-options>
         <button ion-button >
           <ion-icon name="trash"></ion-icon>
         </button>

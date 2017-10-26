@@ -31,7 +31,8 @@ export class AgendamentoDao {
     listAll(){
         let agendamentos = [];
         return this._storage.forEach(dado => {
-            let sala  = new Sala(dado.nome, dado.preco, dado.imgDir);
+            let sala  = new Sala(dado.sala.nome, dado.sala.preco, dado.sala.imgDir);
+            console.log(sala.imgDir)
             let agendamento = new Agendamento(
                 sala,
                 dado.valor,

@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from './../pages/login/login';
+import { AboutPage } from '../pages/about/about';
 
 
 @Component({
@@ -14,8 +15,10 @@ import { LoginPage } from './../pages/login/login';
 export class MyApp {
   rootPage:any = LoginPage;
   public paginas = [
-    { titulo: 'Agendamentos', componente: AgendamentosPage },
-    { titulo: 'Perfil', componente: PerfilPage }
+    { titulo: 'Agendamentos', componente: AgendamentosPage, icon: 'calendar' },
+    { titulo: 'Perfil', componente: PerfilPage, icon: 'person' },
+    { titulo: 'Logout', componente: LoginPage, icon: 'log-out' },
+    { titulo: 'Sobre', componente: AboutPage, icon: 'information-circle' }
   ];
 
   @ViewChild(Nav) public nav: Nav;

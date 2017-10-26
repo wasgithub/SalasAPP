@@ -24,6 +24,7 @@ import { AgendamentosPage } from '../pages/agendamentos/agendamentos';
 import { LoginPage } from '../pages/login/login';
 import { UsuarioService } from '../domain/usuario/usuario-service';
 import { PerfilPage } from '../pages/perfil/perfil';
+import { AboutPage } from '../pages/about/about';
 
 function provideStorage() {
   
@@ -41,7 +42,8 @@ function provideStorage() {
     CadastroPage,
     AgendamentosPage,
     LoginPage,
-    PerfilPage
+    PerfilPage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ function provideStorage() {
     CadastroPage,
     AgendamentosPage,
     LoginPage,
-    PerfilPage
+    PerfilPage,
+    AboutPage
   ],
   providers: [
     StatusBar,
