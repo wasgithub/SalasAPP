@@ -2,7 +2,7 @@ import { UsuarioService } from './../../domain/usuario/usuario-service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
-import { HomePage } from './../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
@@ -34,7 +34,7 @@ export class LoginPage {
       }).present();
     });*/
     if (this._loginService.login(this.email, this.senha)){
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(TabsPage);
     } else {
       this._alertCtrl.create({
         title: "Problema no login..",
