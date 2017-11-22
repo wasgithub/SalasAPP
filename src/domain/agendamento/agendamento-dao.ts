@@ -19,6 +19,11 @@ export class AgendamentoDao {
         return this._storage.set(key, agendamento);
     }
 
+    delete(agendamento: Agendamento) {
+        let key = this._getkey(agendamento);
+        return this._storage.remove(key);
+    }
+
     checkExist(agendamento: Agendamento){
         let key = this._getkey(agendamento);
         return this._storage

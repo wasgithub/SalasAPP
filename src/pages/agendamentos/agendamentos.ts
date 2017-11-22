@@ -1,6 +1,6 @@
 import { AgendamentoDao } from './../../domain/agendamento/agendamento-dao';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Agendamento } from '../../domain/agendamento/agendamento';
 
 @IonicPage()
@@ -15,12 +15,24 @@ export class AgendamentosPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private _dao: AgendamentoDao) {
+    private _dao: AgendamentoDao,
+    private _toast: ToastController) {
 
-      this._dao
-        .listAll()
-        .then(agendamentos => this.agendamentos = agendamentos);
   }
 
+  ionViewDidEnter() {
+    this._dao
+    .listAll()
+    .then(agendamentos => this.agendamentos = agendamentos);
+    console.log(this.agendamentos);
+  }
 
+  deletar(agendamento: Agendamento, i) {
+    this._dao
+    .delete(agendamento)
+    .then(() => {
+      this._toast.create({message: 'Agendamento removido com sucesso..', 
+                            duration:3000, position: 'botton'}).present();
+                            this.agendamentos.splice(i, 1)});
+  }
 }
