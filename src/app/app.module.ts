@@ -26,6 +26,7 @@ import { UsuarioService } from '../domain/usuario/usuario-service';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { AboutPage } from '../pages/about/about';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ReservaDetalhesPage } from '../pages/reserva-detalhes/reserva-detalhes';
 
 function provideStorage() {
   
@@ -45,7 +46,8 @@ function provideStorage() {
     LoginPage,
     PerfilPage,
     AboutPage,
-    TabsPage
+    TabsPage,
+    ReservaDetalhesPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ function provideStorage() {
     LoginPage,
     PerfilPage,
     AboutPage,
-    TabsPage
+    TabsPage,
+    ReservaDetalhesPage
   ],
   providers: [
     StatusBar,

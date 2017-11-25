@@ -1,3 +1,4 @@
+import { ReservaDetalhesPage } from './../reserva-detalhes/reserva-detalhes';
 import { AgendamentoDao } from './../../domain/agendamento/agendamento-dao';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
@@ -17,7 +18,6 @@ export class AgendamentosPage {
     public navParams: NavParams,
     private _dao: AgendamentoDao,
     private _toast: ToastController) {
-
   }
 
   ionViewDidEnter() {
@@ -34,5 +34,9 @@ export class AgendamentosPage {
       this._toast.create({message: 'Agendamento removido com sucesso..', 
                             duration:3000, position: 'botton'}).present();
                             this.agendamentos.splice(i, 1)});
+  }
+
+  detalhes(agendamento){
+    this.navCtrl.push(ReservaDetalhesPage, { agendamentoSelecionado: agendamento });
   }
 }
