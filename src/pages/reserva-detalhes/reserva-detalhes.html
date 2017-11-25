@@ -31,23 +31,23 @@
             </ion-row>
         </ion-item-group>
         <ion-item-group>
+            <ion-item-divider>VALOR: R$  {{ agendamento.valor }}  </ion-item-divider>
             <ion-item-divider>
                 <ion-icon name="options" item-left ></ion-icon>
                 DESCRIÇÃO
             </ion-item-divider>
             <ion-item>
-                <ion-icon name="md-checkbox-outline" item-left ></ion-icon>
+                <ion-icon name="albums" item-left ></ion-icon>
                 {{ agendamento.sala.nome }}
             </ion-item>
             <ion-item>
-                <ion-icon name="md-checkbox-outline" item-left ></ion-icon>
-                {{ agendamento.data }}
+                <ion-icon name="calendar" item-left ></ion-icon>
+                <ion-datetime disabled="true" [(ngModel)]="agendamento.data" name="data" displayFormat="DD/MM/YY"></ion-datetime>
             </ion-item>
             <ion-item>
-                <ion-icon name="md-checkbox-outline" item-left ></ion-icon>
+                <ion-icon name="home" item-left ></ion-icon>
                 {{ agendamento.endereco }}
             </ion-item>                        
-            <ion-item-divider>TOTAL: R$  precoTotal  </ion-item-divider>
         </ion-item-group>
     </ion-card-content>
 </ion-card>
